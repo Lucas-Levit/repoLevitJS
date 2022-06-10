@@ -55,6 +55,9 @@
 
 let nombre = prompt ("Cual es su nombre?")
 
+while (nombre === "") {
+    nombre = prompt ("Por favor, complete su nombre")
+}
 
 function saludar () {
     let respuesta = prompt ("Hola " + nombre + " todo bien?")
@@ -67,6 +70,9 @@ function saludar () {
     
 }
 saludar ()
+
+
+
 
 function elegirProfesion () {
     let respuesta1 = prompt ("Cual es tu profesion:\n Psiquiatra \n Psicologa/o \n Psicopedagoga/o")
@@ -86,3 +92,38 @@ function elegirProfesion () {
 }
 elegirProfesion ()
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// let profesionales = [" Psicologas/os ", " Psquiatras ", " Psicopedagogas/os "];
+// alert (profesionales)
+
+// class consultorio {
+//     constructor(aire,luminosidad,secretaria) {
+//         this.aire = aire;
+//         this.luminosidad = luminosidad;
+//         this.secretaria = secretaria
+//         this.info = `Todos los consultorios cuentan con ${this.aire}, son ${this.luminosidad} y con ${this.secretaria}`;
+//     }
+// }
+
+// let consultorio1 = new consultorio ("aire acondicionado", "muy luminosos", "servicio de secretaria")
+// let consultorio2 = new consultorio ("aire acondicionado", "muy luminosos", "servicio de secretaria")
+// let consultorio3 = new consultorio ("aire acondicionado", "muy luminosos", "servicio de secretaria")
+
+// document.write(consultorio1.info);
