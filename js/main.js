@@ -19,7 +19,7 @@
 // }
 
 
-// for (let i = 0; i < 10; i++) {
+// for (let i = 0; i <br 10; i++) {
 //     console.log(i);
 // }
 
@@ -53,77 +53,68 @@
 // }
 
 
-let nombre = prompt ("Cual es su nombre?")
+// let nombre = prompt ("Cual es su nombre?")
 
-while (nombre === "") {
-    nombre = prompt ("Por favor, complete su nombre")
-}
-
-function saludar () {
-    let respuesta = prompt ("Hola " + nombre + " todo bien?")
-    if (respuesta === "bien" || respuesta === "muy bien" || respuesta === "excelente" || respuesta === "optimo" || respuesta === "si" ){
-        alert ("Que bueno")
-    }
-    else {
-        alert ("Que pena")
-}
-    
-}
-saludar ()
-
-
-
-
-function elegirProfesion () {
-    let respuesta1 = prompt ("Cual es tu profesion:\n Psiquiatra \n Psicologa/o \n Psicopedagoga/o")
-    if (respuesta1 === "Psiquiatra") {
-        prompt ("Necesitas Divan?")
-    }
-    else if (respuesta1 === "Psicologa/o")
-        prompt ("Necesitas escritorio?")
-    
-    
-    else if (respuesta1 === "Psicopedagoga/o")
-    prompt ("Necesitas sillones?")
-    
-
-    else 
-    alert ("Opcion no valida. Vuelva a intentar.")
-}
-elegirProfesion ()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// let profesionales = [" Psicologas/os ", " Psquiatras ", " Psicopedagogas/os "];
-// alert (profesionales)
-
-// class consultorio {
-//     constructor(aire,luminosidad,secretaria) {
-//         this.aire = aire;
-//         this.luminosidad = luminosidad;
-//         this.secretaria = secretaria
-//         this.info = `Todos los consultorios cuentan con ${this.aire}, son ${this.luminosidad} y con ${this.secretaria}`;
-//     }
+// while (nombre === "") {
+//     nombre = prompt ("Por favor, complete su nombre")
 // }
 
-// let consultorio1 = new consultorio ("aire acondicionado", "muy luminosos", "servicio de secretaria")
-// let consultorio2 = new consultorio ("aire acondicionado", "muy luminosos", "servicio de secretaria")
-// let consultorio3 = new consultorio ("aire acondicionado", "muy luminosos", "servicio de secretaria")
+// function saludar () {
+//     let respuesta = prompt ("Hola " + nombre + " todo bien?")
+//     if (respuesta === "bien" || respuesta === "muy bien" || respuesta === "excelente" || respuesta === "optimo" || respuesta === "si" ){
+//         alert ("Que bueno")
+//     }
+//     else {
+//         alert ("Que pena")
+// }
+    
+// }
+// saludar ()
 
-// document.write(consultorio1.info);
+
+
+
+// function elegirProfesion () {
+//     let respuesta1 = prompt ("Cual es tu profesion:\n Psiquiatra \n Psicologa/o \n Psicopedagoga/o")
+//     if (respuesta1 === "Psiquiatra") {
+//         prompt ("Necesitas Divan?")
+//     }
+//     else if (respuesta1 === "Psicologa/o")
+//         prompt ("Necesitas escritorio?")
+    
+    
+//     else if (respuesta1 === "Psicopedagoga/o")
+//     prompt ("Necesitas sillones?")
+    
+
+//     else 
+//     alert ("Opcion no valida. Vuelva a intentar.")
+// }
+// elegirProfesion ()
+
+
+
+
+let profesionales = [" Psicologas/os ", " Psquiatras ", " Psicopedagogas/os "];
+alert (profesionales)
+let total = profesionales.push (" Nutricionistas " , " Musicoterapeutas")
+console.log (total)
+
+class consultorio {
+    constructor(aire,luminosidad,secretaria) {
+        this.aire = aire;
+        this.luminosidad = luminosidad;
+        this.secretaria = secretaria
+        this.info = `Todos los consultorios cuentan con ${this.aire}, son ${this.luminosidad} y con ${this.secretaria}`;
+    }
+}
+
+let consultorio1 = new consultorio ("aire acondicionado", "muy luminosos", "servicio de secretaria")
+let consultorio2 = new consultorio ("aire acondicionado", "muy luminosos", "servicio de secretaria")
+let consultorio3 = new consultorio ("aire acondicionado", "muy luminosos", "servicio de secretaria")
+
+let profesionales1 = profesionales.join (",")
+
+
+document.write(`${profesionales1}  </br> ${consultorio1.info}`);
+
