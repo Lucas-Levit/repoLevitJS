@@ -1,104 +1,76 @@
-// let unPais = prompt ("Elija un destino a viajar: \n 1)Argentina \n 2)Chile \n 3)Mexico");
+let datos = [];
+let precioTotal = 0
+const propiedades = [
+    {consultorio: "Divan" , precio: 2000},
+    {consultorio: "Sillon" , precio: 1500},
+    {consultorio: "Escritorio" , precio: 1800},
+]
 
+function saludar (datosConsulta) {
+    let nombre = prompt ("Cual es su nombre?")
+    while (nombre === "") {
+    nombre = prompt ("Por favor, complete su nombre")
+    datosConsulta.nombreCliente = nombre
+}
 
-// if (unPais === "Argentina") {
-//     console.log("Usted eligio el destino:" + unPais);
-    
-// }
+    let respuesta = prompt ("Hola " + nombre + " todo bien?")
+    if (respuesta === "bien" || respuesta === "muy bien" || respuesta === "excelente" || respuesta === "optimo" || respuesta === "si" ){
+        alert ("Que bueno")
+    }
+    else {
+        alert ("Que pena")
+}
+}
 
-// else if (unPais === "mexico") {
-//     console.log("Usted eligio el destino:" + unPais);
-// }
+function elegirProfesion (datosConsulta) {
+    let respuesta1 = parseInt ( prompt  ("Selecciona el numero de tu profesion:\n 1.Psiquiatra \n 2.Psicologa/o \n 3.Psicopedagoga/o"))
+        if (respuesta1 === 1) {
+            datosConsulta.profesion = "Psiquiatra"
+        }
+        else if (respuesta1 === 2) {
+            datosConsulta.profesion = "Psicologa/o"
+        }
+        else if (respuesta1 === 3) {
+            datosConsulta.profesion = "Psicopedagoga/o"
+        }
+        return datosConsulta
+}
 
-// else if (unPais === "Chile") {
-//     console.log("Usted eligio el destino:" + unPais);
-// }
+function elegirElemento(datosConsulta) {
+let respuesta2 = parseInt ( prompt  ("Selecciona el numero del elemento que necesites:\n 1.Divan \n 2.Sillon \n 3.Escritorio"))
+if (respuesta2 === 1) {
+    datosConsulta.elemento = "Divan"
+}
+else if (respuesta2 === 2) {
+    datosConsulta.elemento = "Sillon"
+}
+else if (respuesta2 === 3) {
+    datosConsulta.elemento = "Escritorio"
+}
+    return datosConsulta
+}
 
-// else {
-//     alert(unPais + " no se escuentra disponible");
-// }
+function precio(datosConsulta) {
 
+let ingreso = prompt ("Busqueda de productos: Ingrese un precio maximo")
+let filtrado = propiedades.filter ((el) => el.precio <= ingreso)
+datosConsulta.resultadoBusqueda = filtrado
+return datosConsulta
+}
 
-// for (let i = 0; i <br 10; i++) {
-//     console.log(i);
-// }
+function consultas() {
+    let datosConsulta = {}
+    saludar(datosConsulta)
+    elegirProfesion(datosConsulta)
+    elegirElemento(datosConsulta)
+    precio(datosConsulta)
+    datos.push(datosConsulta)
 
-// let ingreso = prompt ("Elija un producto \n Para salir presiona ESC")
-
-
-// while (ingreso != "ESC") {
-//     console.log(" el producto ingresado es " + ingreso);
-//     ingreso = prompt (" Ingresa otro producto \n Para salir presiona ESC")
-    
-// }
-
-// let eleccion = prompt ("Elegi el pais \n 1-Argentina \n 2-Chile \n 3-Mexico \n 4-Uruguay")
-
-// switch (eleccion) {
-//     case "1":
-//         alert ("Seleccionaste Argentina");
-//         break;
-//     case "2":
-//         alert ("Seleccionaste Chile");
-//         break;
-//     case "3":
-//         alert ("Seleccionaste Mexico");
-//         break;
-//     case "4":
-//         alert ("Seleccionaste Uruguay");
-//         break;
-//     default:
-//         alert ("Opcion no valida");
-//         break;
-// }
-
-
-// let nombre = prompt ("Cual es su nombre?")
-
-// while (nombre === "") {
-//     nombre = prompt ("Por favor, complete su nombre")
-// }
-
-// function saludar () {
-//     let respuesta = prompt ("Hola " + nombre + " todo bien?")
-//     if (respuesta === "bien" || respuesta === "muy bien" || respuesta === "excelente" || respuesta === "optimo" || respuesta === "si" ){
-//         alert ("Que bueno")
-//     }
-//     else {
-//         alert ("Que pena")
-// }
-    
-// }
-// saludar ()
-
-
-
-
-// function elegirProfesion () {
-//     let respuesta1 = prompt ("Cual es tu profesion:\n Psiquiatra \n Psicologa/o \n Psicopedagoga/o")
-//     if (respuesta1 === "Psiquiatra") {
-//         prompt ("Necesitas Divan?")
-//     }
-//     else if (respuesta1 === "Psicologa/o")
-//         prompt ("Necesitas escritorio?")
-    
-    
-//     else if (respuesta1 === "Psicopedagoga/o")
-//     prompt ("Necesitas sillones?")
-    
-
-//     else 
-//     alert ("Opcion no valida. Vuelva a intentar.")
-// }
-// elegirProfesion ()
-
-
-
-
-let profesionales = [" Psicologas/os ", " Psquiatras ", " Psicopedagogas/os "];
-alert (profesionales)
-let total = profesionales.push (" Nutricionistas " , " Musicoterapeutas")
-console.log (total)
+}
+consultas ()
+consultas ()
+const datos1 = datos.map(value=>value)
+console.log(datos1);
 
 class consultorio {
     constructor(aire,luminosidad,secretaria) {
@@ -109,12 +81,44 @@ class consultorio {
     }
 }
 
-let consultorio1 = new consultorio ("aire acondicionado", "muy luminosos", "servicio de secretaria")
-let consultorio2 = new consultorio ("aire acondicionado", "muy luminosos", "servicio de secretaria")
-let consultorio3 = new consultorio ("aire acondicionado", "muy luminosos", "servicio de secretaria")
+let consultorio1 = new consultorio ("aire acondicionado", "muy luminosos", "servicio de secretaria");
+let consultorio2 = new consultorio ("aire acondicionado", "muy luminosos", "servicio de secretaria");
+let consultorio3 = new consultorio ("aire acondicionado", "muy luminosos", "servicio de secretaria");
 
-let profesionales1 = profesionales.join (",")
+document.write(consultorio1.info);
 
+    // switch (respuesta1) {
+    //     case 1:
+    //         alert ("Seleccionaste Psiquiatra")
+    //         datos.push = "Psiquiatra"
+    //         break;
+    //     case 2: 
+    //         alert ("Seleccionaste Psicologa/o")
+    //         datos.push = "Psicologa/o"
+    //         break;
+    //     case 3: 
+    //         alert ("Seleccionaste Psicopedagoga/o")
+    //         datos.push = "Psicopedagoga/o"
+    //         break;
+    //     default: 
+    //         alert ("Opcion no valida. Vuelva a intentar.")
+    //         break;
+    // }
+    
+    // switch (respuesta2) {
+//     case 1:
+//         datos.nombre = "Divan"
+//         precioTotal = precioTotal + 1500
+//         break;
+//     case 2: 
+//         datos.push = "Sillon"
+//         precioTotal = precioTotal + 2000
+//         break;
+//     case 3:
+//         datos.push = "Escritorio"
+//         precioTotal = precioTotal + 1800
+//         break;
 
-document.write(`${profesionales1}  </br> ${consultorio1.info}`);
-
+//     default: alert ("Opcion no valida, vuelva a intentar")
+//         break;
+// }
