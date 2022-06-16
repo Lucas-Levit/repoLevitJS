@@ -87,38 +87,3 @@ let consultorio3 = new consultorio ("aire acondicionado", "muy luminosos", "serv
 
 document.write(consultorio1.info);
 
-    // switch (respuesta1) {
-    //     case 1:
-    //         alert ("Seleccionaste Psiquiatra")
-    //         datos.push = "Psiquiatra"
-    //         break;
-    //     case 2: 
-    //         alert ("Seleccionaste Psicologa/o")
-    //         datos.push = "Psicologa/o"
-    //         break;
-    //     case 3: 
-    //         alert ("Seleccionaste Psicopedagoga/o")
-    //         datos.push = "Psicopedagoga/o"
-    //         break;
-    //     default: 
-    //         alert ("Opcion no valida. Vuelva a intentar.")
-    //         break;
-    // }
-    
-    // switch (respuesta2) {
-//     case 1:
-//         datos.nombre = "Divan"
-//         precioTotal = precioTotal + 1500
-//         break;
-//     case 2: 
-//         datos.push = "Sillon"
-//         precioTotal = precioTotal + 2000
-//         break;
-//     case 3:
-//         datos.push = "Escritorio"
-//         precioTotal = precioTotal + 1800
-//         break;
-
-//     default: alert ("Opcion no valida, vuelva a intentar")
-//         break;
-// }
