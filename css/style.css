@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@100&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: "roboto" , sans-serif;
+}
+
+.navbar {
+    height: 6vh;
+}
+
+
+.carousel-inner {
+    height: 80vh;
+}
+.carousel-item {
+    height: 80vh;
+}
+
+h5 {
+    text-shadow: 2px 2px 2px #000;  
+} 
+p {
+    text-shadow: 2px 1px 1px #000 ;
+}
+
+
+.contacto {
+    font-size: 2.5rem;
+    margin-left: 1.8rem;
+    margin-top: 2rem;
+
+
+}
+form {
+    margin: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+footer{
+    margin-top: 3rem;
+}
+footer iframe {
+    width: 100vw;
+    height: 50vh;
+    
+}
