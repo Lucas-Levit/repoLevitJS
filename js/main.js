@@ -1,35 +1,116 @@
+consultas = []
+consultorios = []
+
 const formulario = document.getElementById("formulario");
-const contacto = document.querySelector(".contacto");
-const btn = document.querySelector(".btn")
-
-contacto.setAttribute("contentEditable" , "true")
+const btn = document.querySelector(".btn");
+const cards = document.querySelector(".cards");
 
 
+let caracteristicas = [{
+        id: 1,
+        nombre: "Consultorio basico",
+        imagen: "./img/consultorio1.jpg",
+        descripcion: "Este consultorio, cuenta con un sillon",
+        precio: 1300,
+        alquiler: "p/hora",
+        disponible: true,
+        meses: ["marzo", "junio", "agosto","diciembre"],
+    },
+    {
+        id: 2,
+        nombre: "Consultorio medio",
+        imagen: "./img/consultorio2.jpg",
+        descripcion: "Este consultorio, cuenta con un sillon y escritorio",
+        precio: 1500,
+        alquiler: "p/hora",
+        disponible: true,
+        meses: ["enero", "abril", "septiembre"],
+    },
+    {
+        id: 3,
+        nombre: "Consultorio Medio Mejorado",
+        imagen: "./img/consultorio1.jpg",
+        descripcion: "Este consultorio, cuenta con un divan y un escritorio",
+        precio: 1800,
+        alquiler: "p/hora",
+        disponible: true,
+        meses: ["febrero", "mayo", "julio", "septiembre"],
+    },
+    {
+        id: 4,
+        nombre: "Consultorio premium",
+        imagen: "./img/consultorio3.jpg",
+        descripcion: "Este consultorio, cuenta con un sillon y divan",
+        precio: 2000,
+        alquiler: "p/hora",
+        disponible: true,
+        meses: ["octubre", "noviembre"],
+    },
+    {
+        id: 5,
+        nombre: "Consultorio premium mejorado",
+        imagen: "./img/consultorio3.jpg",
+        descripcion: "Este consultorio, cuenta con un sillon, un divan y un escritorio",
+        precio: 2300,
+        alquiler: "p/hora",
+        disponible: true,
+        meses: ["diciembre"]
+    },
+]
 
-function contactanos() {
-    formulario.innerHTML = `<div class="mb-3">
-                            <label for="exampleInputEmail1" class="form-label">Direccion de email</label>
-                            <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                            <div id="emailHelp" class="form-text">Ingrese su email.</div>
-                        </div>
-                        <div class="mb-3">
-                            <label for="exampleInputPassword1" class="form-label">Constraseña</label>
-                            <input type="password" class="form-control" id="exampleInputPassword1">
-                        </div>
-                        <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Borrar todo</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary">Enviar</button>`;
+
+function renderizarTarjeta(consultorio) {
+    const plantillaTarjeta = `
+        <div class="card">
+            <img src="${consultorio.imagen}" class="card-img-top" alt="...">
+            <div class="card-body">
+                <h5 class="card-title">${consultorio.nombre}</h5>
+                <p class="card-text">${consultorio.descripcion}</p>
+                <span>$${consultorio.precio} ${consultorio.alquiler}</span>
+                <a href="#" class="btn btn-primary">Reservar</a>
+            </div>
+        </div>
+    `
+    return plantillaTarjeta
 }
 
-formulario.addEventListener("submit" , enviar)
 
-function enviar() {
-    alert("Estas seguro que deseas enviar?")
+function renderizarFiltro(consultoriosFiltrado) {
+const contenedorTarjetas = document.getElementById ("contenedorTarjetas")
+contenedorTarjetas.innerHTML = ""
+
+consultoriosFiltrado.forEach(consultorio => {
+const tarjeta = renderizarTarjeta(consultorio)
+contenedorTarjetas.innerHTML += tarjeta
+})
 }
+const mesFiltro = document.getElementById("mesFiltro")
+let mesElegido = ""
+
+mesFiltro.addEventListener ("change", (e)=>{
+    if (e.target.value !== "--") {
+        mesElegido = e.target.value
+    }
+})
+
+formulario.addEventListener("submit" ,(e)=>{
+    e.preventDefault()
+    
+    const nombre = document.getElementById("nombre")
+    const email = document.getElementById("email")
+    const telefono = document.getElementById("telefono")
+    const mensaje = document.getElementById("mensaje")
+    const consultoriosFiltrado = caracteristicas.filter(consultorio => consultorio.meses.includes(mesElegido))
+    renderizarFiltro(consultoriosFiltrado);
+    const datosUsuario = {nombre:nombre.value, email:email.value, telefono:telefono.value, mes:mesElegido, mensaje:mensaje.value}
+    console.log(datosUsuario);
+    localStorage.setItem("datosUsuario", JSON.stringify (datosUsuario))
+})
 
 
-
-contactanos();
+function obtenerDatos () {
+    let persona =  JSON.parse (localStorage.getItem ("datosUsuario"))
+    console.log(persona);
+}
+obtenerDatos()
 
