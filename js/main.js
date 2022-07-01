@@ -1,5 +1,5 @@
-consultas = []
-consultorios = []
+// consultas = []
+// consultorios = []
 
 const formulario = document.getElementById("formulario");
 const btn = document.querySelector(".btn");
@@ -95,18 +95,32 @@ mesFiltro.addEventListener ("change", (e)=>{
 
 formulario.addEventListener("submit" ,(e)=>{
     e.preventDefault()
-    
     const nombre = document.getElementById("nombre")
     const email = document.getElementById("email")
     const telefono = document.getElementById("telefono")
     const mensaje = document.getElementById("mensaje")
+
+    const camposVacios = nombre.value && email.value && telefono.value && mensaje.value
+    if (!camposVacios) {swal("Por favor complete los campos vacios");}
+    else {
     const consultoriosFiltrado = caracteristicas.filter(consultorio => consultorio.meses.includes(mesElegido))
     renderizarFiltro(consultoriosFiltrado);
     const datosUsuario = {nombre:nombre.value, email:email.value, telefono:telefono.value, mes:mesElegido, mensaje:mensaje.value}
     console.log(datosUsuario);
     localStorage.setItem("datosUsuario", JSON.stringify (datosUsuario))
+    Toastify({
+        text: "Gracias por tus datos, te contactaremos a la brevedad",
+        duration: 3000,
+        newWindow: true,
+        close: true,
+        gravity: "bottom", // `top` or `bottom`
+        position: "right", // `left`, `center` or `right`
+        stopOnFocus: true, // Prevents dismissing of toast on hover
+        style: {background: "rgba(99, 28, 42, 0.7)"},
+        onClick: function(){} // Callback after click
+        }).showToast();
+    }
 })
-
 
 function obtenerDatos () {
     let persona =  JSON.parse (localStorage.getItem ("datosUsuario"))
