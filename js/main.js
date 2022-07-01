@@ -1,6 +1,3 @@
-// consultas = []
-// consultorios = []
-
 const formulario = document.getElementById("formulario");
 const btn = document.querySelector(".btn");
 const cards = document.querySelector(".cards");
@@ -60,13 +57,14 @@ let caracteristicas = [{
 
 
 function renderizarTarjeta(consultorio) {
-    const plantillaTarjeta = `
-        <div class="card">
-            <img src="${consultorio.imagen}" class="card-img-top" alt="...">
+    let {imagen, nombre, descripcion, precio, alquiler} = consultorio
+    const plantillaTarjeta =`
+            <div class="card">
+            <img src="${imagen}" class="card-img-top" alt="...">
             <div class="card-body">
-                <h5 class="card-title">${consultorio.nombre}</h5>
-                <p class="card-text">${consultorio.descripcion}</p>
-                <span>$${consultorio.precio} ${consultorio.alquiler}</span>
+                <h5 class="card-title">${nombre}</h5>
+                <p class="card-text">${descripcion}</p>
+                <span>$${precio} ${alquiler}</span>
                 <a href="#" class="btn btn-primary">Reservar</a>
             </div>
         </div>
