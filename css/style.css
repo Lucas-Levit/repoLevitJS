@@ -142,7 +142,9 @@ form {
 }
 
 /* ---------------------------------- cards --------------------------------- */
-
+.fondo{
+    background-color: rgba(99, 28, 42, 0.2)
+}
 .grid_container .cards {
     margin:4rem auto;
     margin-left: 5rem;
@@ -150,13 +152,97 @@ form {
     display: flex;
     align-items: flex-end;
 }
+#contenedorTarjetas h5{
+    color: #000;
+}
+#contenedorTarjetas p{
+    color: #000;
+}
 
 .card-body{
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 2rem;
 }
+#consultorio {
+    display: flex;
+    justify-content: space-evenly;
+}
 
+.user h4{
+    font-size: 1.8rem;
+    margin-left: 2.2rem;
+}
+
+#name{
+    font-size: 1.5rem;
+}
+
+#datosReserva h2{
+    text-align: center;
+    margin-top: 2rem;
+    font-size: 2.5rem;
+}
+#datosReserva h3{
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    font-size: 2rem;
+}
+#datosReserva #usuario{
+    display: flex;
+    flex-direction: column;
+    margin: 2rem 0 0 0;
+    font-size: 1.3rem;
+    border: rgba(61, 56, 56, 0.658) 0.2rem solid;
+    border-radius: 1rem;
+    padding: 2rem;
+}
+
+#datosReserva .consultorios{
+    display: flex;
+    flex-direction: column;
+    
+}
+
+
+#reserva{
+    border: rgba(61, 56, 56, 0.658) 0.2rem solid;
+    border-radius: 0.8rem;
+    font-size: 1.2rem;
+}
+.finalizar {
+    margin-bottom: 2rem;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    
+}
+#finalizar:hover{
+    background-color: rgb(58, 16, 16);
+    color: rgb(233, 179, 71);
+}
+#finalizar{
+    font-size: 1.3rem;
+    background-color: rgb(155, 56, 56);
+}
+
+
+#datosReserva{
+    display: block;
+    margin: auto;
+}
+#datosReserva h5{
+    color: #000;
+    font-size: 1.8rem;
+    margin-left: 6rem;
+    margin-bottom: 2rem;
+
+}
+#datosReserva p{
+    color: #000;
+}
 /* --------------------------------- footer --------------------------------- */
 footer{
     margin-top: 3rem;
@@ -189,6 +275,7 @@ footer iframe {
     }
     .gridContainer {
         width: 100vw;
+        height: 100vh;
         min-width: 400px;
     }
     .gridContainer .carousel-item{
@@ -200,10 +287,26 @@ footer iframe {
         width: 100%;
         object-fit: contain;
     }
+    .d-md-block {
+        font-size: 0.7rem;
+        text-shadow: none;
+        height: 9rem;
+    }
+    .d-md-block h3{
+        margin-top: 1.5rem;
+}
+    }
+    .d-md-block h3, h5, p{
+        color: #fff;
+        text-shadow: none;
+    } 
+    #secretaria h5, p{
+        margin-top: 2rem;
+    }
     footer iframe{
         width: 100%;
     }
-}
+
 
 @media (max-width: 767.98px) {
     .gridContainer {

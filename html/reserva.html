@@ -8,8 +8,8 @@
     <title>Psitios</title>
     <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <link rel="icon" type="image/jpeg" href="./img/icono.jpeg">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="icon" type="image/jpeg" href="../img/icono.jpeg">
+    <link rel="stylesheet" href="../css/style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 
@@ -52,14 +52,14 @@
                 </div>
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                        <img src="./img/cons2.jpg" class="d-block img-fluid w-100" alt="conjuntoImagenes">
+                        <img src="../img/cons2.jpg" class="d-block img-fluid w-100" alt="conjuntoImagenes">
                         <div class="carousel-caption  d-md-block">
                             <h3>Alquiler de consultorios en Almagro</h3>
                             <p>Habilitado por el ministerio de salud</p>
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="./img/cons3.jpg" class="d-block img-fluid  w-100" alt="consultorios">
+                        <img src="../img/cons3.jpg" class="d-block img-fluid  w-100" alt="consultorios">
                         <div class="carousel-caption  d-md-block">
                             <h4>Consultorios por Hora y Modulos</h4>
                             <p>Amplios consultorios, sala de espera, super luminosos, bien equipados, office para
@@ -67,7 +67,7 @@
                         </div>
                     </div>
                     <div class="carousel-item">
-                        <img src="./img/salaEspera1.jpg" class="d-block img-fluid  w-100" alt="consultorios">
+                        <img src="../img/salaEspera1.jpg" class="d-block img-fluid  w-100" alt="consultorios">
                         <div class="carousel-caption  d-md-block" id="secretaria">
                             <h5>Ideal para: Psicologos - Psicopedagogos - Psiquiatras</h5>
                             <p>Secretaria y Manejo de Agenda.</p>
@@ -85,75 +85,37 @@
                     <span class="visually-hidden">Next</span>
                 </button>
             </div>
+            
+            <div class="fondo">
+            <div id="datosReserva">
+                <h2>Muchas gracias por su reserva</h2>
+                <h3> Los datos de su reserva son: </h3>
+                <div id="consultorio">
+                    <div class="user">
+                        <h4>Datos de usuario</h4>
+                        <div id="usuario">
 
-            <div class="grid_container">
-                <form id="formulario" class="w-100 m-3">
-                    <div>
-                        <h4 class="contacto"> Consultanos</h4>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label for="nombre" class="form-label">Nombre y apellido</label>
-                        <input name="nombre" type="text" class="form-control" id="nombre" aria-describedby="emailHelp">
-                    </div>
-                    <div class="mb-3">
-                        <label for="email" class="form-label">Email</label>
-                        <input name="email" type="text" class="form-control" id="email">
-                    </div>
-                    <div class="mb-3">
-                        <label for="telefono" class="form-label">Telefono</label>
-                        <input name="telefono" type="text" class="form-control" id="telefono"
-                            aria-describedby="emailHelp">
-                    </div>
-                    <div class="mb-3">
-                        <label for="mesFiltro" class="form-label">Mes de consulta
-                            <div class="selectMes">
-                                <select id="mesFiltro" aria-describedby="emailHelp">
-                                    <option value="--" selected disabled>--</option>
-                                    <option value="enero">Enero</option>
-                                    <option value="febrero">Febrero</option>
-                                    <option value="marzo">Marzo</option>
-                                    <option value="abril">Abril</option>
-                                    <option value="mayo">Mayo</option>
-                                    <option value="junio">Junio</option>
-                                    <option value="julio">Julio</option>
-                                    <option value="agosto">Agosto</option>
-                                    <option value="septiembre">Septiembre</option>
-                                    <option value="octubre">Octubre</option>
-                                    <option value="noviembre">Noviembre</option>
-                                    <option value="diciembre">Diciembre</option>
-                                </select>
-                            </div>
-                        </label>
-                    </div>
-                    <div class="form-group">
-                        <label for="mensaje">Mensaje</label>
-                        <textarea name="mensaje" class="form-control" id="mensaje" rows="3"></textarea>
-                    </div>
-                    <button type="reset" class="btn btn-primary">Borrar</button>
 
-                    <button type="submit" class="btn btn-primary mt-2">Enviar</button>
-                </form>
+                    <div class="consultorios">
+                        <h5> Datos de consultorios</h5>
+                        <div id="reserva">
 
-                <div class="cards" id="contenedorTarjetas">
-
+                        </div>
+                    </div>
                 </div>
             </div>
 
-        </main>
-
-        <footer id="mapa">
-            <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3284.0390280421934!2d-58.420942999999994!3d-34.603174599999996!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bcca63c54c0315%3A0x4b4e170022c92ab7!2sAv.%20Corrientes%20%26%20Av.%20Medrano%2C%20C1179%20CABA!5e0!3m2!1ses!2sar!4v1655574805876!5m2!1ses!2sar"
-                width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"></iframe>
-        </footer>
-
-        <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">
-        </script>
-        <script src="./js/main.js"></script>
+            <div class="finalizar">
+                <button class="btn btn-primary" id="finalizar"> Regresar a la pagina principal </button>
+            </div>
     </div>
+            <script src="../js/reserva.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+                crossorigin="anonymous">
+            </script>
 </body>
 
 </html>

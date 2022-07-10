@@ -1,0 +1,70 @@
+[{
+        "id": 1,
+        "nombre": "Consultorio basico",
+        "imagen": "../img/consultorio1.jpg",
+        "descripcion": "Este consultorio, cuenta con un sillon",
+        "precio": 1300,
+        "alquiler": "p/hora",
+        "disponible": true,
+        "meses": [
+            "marzo",
+            "junio",
+            "agosto",
+            "diciembre"
+        ]
+    },
+    {
+        "id": 2,
+        "nombre": "Consultorio medio",
+        "imagen": "../img/consultorio2.jpg",
+        "descripcion": "Este consultorio, cuenta con un sillon y escritorio",
+        "precio": 1500,
+        "alquiler": "p/hora",
+        "disponible": true,
+        "meses": [
+            "enero",
+            "abril",
+            "septiembre"
+        ]
+    },
+    {
+        "id": 3,
+        "nombre": "Consultorio Medio Mejorado",
+        "imagen": "../img/consultorio1.jpg",
+        "descripcion": "Este consultorio, cuenta con un divan y un escritorio",
+        "precio": 1800,
+        "alquiler": "p/hora",
+        "disponible": true,
+        "meses": [
+            "febrero",
+            "mayo",
+            "julio",
+            "septiembre"
+        ]
+    },
+    {
+        "id": 4,
+        "nombre": "Consultorio premium",
+        "imagen": "../img/consultorio3.jpg",
+        "descripcion": "Este consultorio, cuenta con un sillon y divan",
+        "precio": 2000,
+        "alquiler": "p/hora",
+        "disponible": true,
+        "meses": [
+            "octubre",
+            "noviembre"
+        ]
+    },
+    {
+        "id": 5,
+        "nombre": "Consultorio premium mejorado",
+        "imagen": "../img/consultorio3.jpg",
+        "descripcion": "Este consultorio, cuenta con un sillon, un divan y un escritorio",
+        "precio": 2300,
+        "alquiler": "p/hora",
+        "disponible": true,
+        "meses": [
+            "diciembre"
+        ]
+    }
+]
