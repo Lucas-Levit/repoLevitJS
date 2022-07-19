@@ -143,7 +143,8 @@ form {
 
 /* ---------------------------------- cards --------------------------------- */
 .fondo{
-    background-color: rgba(99, 28, 42, 0.2)
+    background-color: rgba(99, 28, 42, 0.2);
+    
 }
 .grid_container .cards {
     margin:4rem auto;
@@ -167,12 +168,13 @@ form {
 }
 #consultorio {
     display: flex;
+    flex-direction: row;
     justify-content: space-evenly;
 }
 
 .user h4{
     font-size: 1.8rem;
-    margin-left: 2.2rem;
+    /* margin-left: 2.2rem; */
 }
 
 #name{
@@ -236,7 +238,7 @@ form {
 #datosReserva h5{
     color: #000;
     font-size: 1.8rem;
-    margin-left: 6rem;
+    /* margin-left: 6rem; */
     margin-bottom: 2rem;
 
 }
@@ -307,6 +309,21 @@ footer iframe {
         width: 100%;
     }
 
+    .fondo{
+        width: 100vw;
+    }
+    #datosReserva{
+        display: flex;
+        flex-direction: column ;
+    }
+
+    .consultorios .consul{
+        text-align: center;
+        margin-top: 1rem;
+    }
+    .user .usuario{
+        text-align: center;
+    }
 
 @media (max-width: 767.98px) {
     .gridContainer {
@@ -323,4 +340,12 @@ footer iframe {
         width: 100%;
         object-fit: contain;
     }
-}
+
+    #consultorio{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+
+} 

@@ -61,7 +61,6 @@ formulario.addEventListener("submit" ,async(e)=>{
 
 function obtenerDatos () {
     let persona =  JSON.parse (localStorage.getItem ("datosUsuario"))
-    console.log(persona);
 }
 obtenerDatos()
 
@@ -70,7 +69,7 @@ contenedorTarjetas.addEventListener ("click" , async (e)=>{
         let id = e.target.dataset.id
         let caracteristicas =  await datos()
         const consultoriosFiltrado = await caracteristicas.find(consultorio => consultorio.id === parseInt(id))
-        console.log(consultoriosFiltrado);
+        
 const datosUsuario = {
     nombre:nombre.value, 
     email:email.value,
@@ -85,7 +84,8 @@ const datosUsuario = {
 
 }
 
-console.log(datosUsuario);
+
+
 localStorage.setItem("datosUsuario", JSON.stringify (datosUsuario))
 Toastify({
     text: "Gracias por tus datos, te contactaremos a la brevedad",
@@ -101,6 +101,33 @@ Toastify({
     setTimeout(()=>{
         window.location.href = "../html/reserva.html"
     },1500)
-    }
+    enviarMail()
+}
 } )
 
+function enviarMail() {
+    let persona = JSON.parse (localStorage.getItem ("datosUsuario"))
+    const { nombreConsultorio, descripcionConsultorio, precioConsultorio, alquilerConsultorio, email, mensaje, mes, telefono, nombre } = persona
+    emailjs.init("Uw56ooKlw3t5FpUu9")
+    emailjs.send('service_hdtozk8', 'template_mqdpziw', {
+        name:`Psitios`,
+        to_email: `${email}`,
+        from_name:`Psitios`,
+        to_name:`${nombre}`,
+        message:`Se ha registrado en "Psitios", los datos de su reserva son: Nombre y apellido: ${nombre}, Email: ${email}, Telefono: ${telefono}, Mes de reserva: ${mes}, Mensaje: ${mensaje}`,
+        datos: `
+        <div class="card">
+        <div class="card-body">
+            <h6 class="card-title" id="name">${nombreConsultorio}</h6>
+            <p class="card-text">${descripcionConsultorio}</p>
+            <span>$${precioConsultorio} ${alquilerConsultorio}</span>
+        </div>
+    </div>
+`
+    })
+        .then(function (response) {
+            console.log('SUCCESS!', response.status, response.text);
+        }, function (error) {
+            console.log('FAILED...', error);
+        });
+}
